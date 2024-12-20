@@ -12,8 +12,8 @@ module kanari_framework::object {
     friend kanari_framework::random;
     friend kanari_framework::deny_list;
 
-    // #[test_only]
-    // friend kanari_framework::test_scenario;
+    #[test_only]
+    friend kanari_framework::test_scenario;
 
     /// The hardcoded ID for the singleton kari System State Object.
     const KARI_SYSTEM_STATE_OBJECT_ID: address = @0x5;
@@ -204,11 +204,10 @@ module kanari_framework::object {
     // marks newly created UIDs from hash
     native fun record_new_uid(id: address);
 
-    // #[test_only]
-    // /// Return the most recent created object ID.
-    // public fun last_created(ctx: &TxContext): ID {
-    //     ID { bytes: tx_context::last_created_object_id(ctx) }
-    // }
-
+    #[test_only]
+    /// Return the most recent created object ID.
+    public fun last_created(ctx: &TxContext): ID {
+        ID { bytes: tx_context::last_created_object_id(ctx) }
+    }
 
 }
