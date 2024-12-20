@@ -9,7 +9,8 @@ module kanari_framework::test_scenario {
     /// the transaction failed when generating these effects. For example, a circular ownership
     /// of objects was created
     const ECouldNotGenerateEffects: u64 = 0;
-
+    
+    #[allow(unused_const)]
     /// Transaction ended without all shared and immutable objects being returned or with those
     /// objects being transferred or wrapped
     const EInvalidSharedOrImmutableUsage: u64 = 1;
@@ -25,6 +26,7 @@ module kanari_framework::test_scenario {
     /// transfer the object to the user.
     const EEmptyInventory: u64 = 3;
 
+    #[allow(unused_const)]
     /// Object of that ID was not found in that inventory. It was possibly already taken
     const EObjectNotFound: u64 = 4;
 
